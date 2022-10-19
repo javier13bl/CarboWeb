@@ -1,0 +1,1808 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@font-face {
+    font-family: mighaExp;
+    src: url(../imgs/Migha-ExpandedCNTR.otf);
+}
+@font-face {
+    font-family: mighaBold;
+    src: url(../imgs/Migha-BoldCNTR.otf);
+}
+:root {
+    --blanco: #F6F7F9;
+    --negro: #1D1D1B;
+    --primario: #D90404;
+    --primarioVivo: #FF4221;
+    --grisClaro: #E8EBED;
+    --gris: #DBDEE0;
+    --gris2: #B1B3B5;
+    --grisOscuro: #A3AFBF;
+    --grisOscuro2: #464747;
+    --grisNegro: #363A40;
+}
+.azul {
+    --primario: #060D59;
+    --primarioVivo: #0C18A6;
+}
+.cafe {
+    --primario: #590202;
+    --primarioVivo: #990303;
+}
+.gris {
+    --primario: #9D9FA1;
+    --primarioVivo: #DBDEE0;
+}
+.verde {
+    --primario: #004D16;
+    --primarioVivo: #03992D;
+    /* 03992D  004D16*/
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: var(--negro);
+    background-color: var(--blanco);
+    min-height: 100vh;
+}
+
+/* GLOBALES */
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+.wrapperContent {
+    width: 85%;
+    margin: 0 auto;
+}
+.hidden {
+    display: none;
+}
+.visible {
+    display: inherit;
+}
+h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+}
+h4 {
+    font-size: 2rem;
+}
+h5 {
+    font-size: 1.6rem;
+}
+img {
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+    background-color: unset;
+    outline: none;
+}
+
+/* LAYOUT */
+/* TOP - NAVBAR */
+.navBg {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+.navbar {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.homeLink,
+.www {
+    background-color: var(--blanco);
+    height: 4rem;
+    min-width: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease;
+}
+.homeLink {
+    font-family: 'mighaExp', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: var(--negro);
+    padding: 0 2rem 0 2rem;
+}
+.homeLink span {
+    color: var(--primario);
+}
+.homeLink:hover,
+.www:hover {
+    background-color: var(--gris);
+    box-shadow: 0 0 1rem rgba(250, 250, 250, .5);
+    cursor: pointer;
+}
+/* MENU */
+.burgerMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.burgerBar {
+    width: 2rem;
+    height: .2rem;
+    border-radius: .5rem;
+    background-color: var(--negro);
+}
+.menu {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--grisNegro);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: mostrarMenu .4s ease-in-out;
+}
+@keyframes mostrarMenu {
+    0% {
+        opacity: 0;
+        width: 0%;
+    } 100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+.menu .menuLinks {
+    height: 60vh;
+    width: 100%;
+    margin: 10rem 6rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu .menuLinks a {
+    min-height: 18%;
+    color: var(--blanco);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    transition: .4s ease-in-out;
+    animation: mostrarMenuLinks .4s ease;
+}
+.menu .menuLinks a:hover {
+    color: var(--grisNegro);
+    background-color: var(--grisClaro);
+    box-shadow: 0 0 1rem rgba(250, 250, 250, .5);
+}
+.menu .menuLinks svg {
+    margin: auto;
+}
+.menu .menuLinks span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease-in-out;
+}
+.menu .menuLinks a:hover span {
+    margin-right: 4rem;
+}
+@keyframes mostrarMenuLinks {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    65% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.subMenu {
+    width: 0;
+    height: 0;
+}
+.clicked:nth-child(1) {
+    transform: rotate(45deg) translate(.7rem, .65rem);
+    transition: .5s ease-out;
+}
+.clicked:nth-child(2) {
+    transform: scale(.1);
+    transition: .5s ease-out;
+}
+.clicked:nth-child(3) {
+    transform: rotate(135deg) translate(-.6rem, .6rem);
+    transition: .5s ease-out;
+}
+.unclicked {
+    transform: rotate(0) translate(0);
+    transition: .5s ease-out;
+}
+/* SUBNAV REDES */
+.subnavContent {
+    display: none;
+    position: absolute;
+    top: 8rem;
+    right: 2.5%;
+    width: 25rem;
+    border-radius: 1rem;
+    background-color: var(--grisClaro);
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+    overflow: hidden;
+    animation: mostrarSubnav .4s ease-in-out;
+}
+.subnavContent a {
+    color: var(--grisNegro);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    padding: 1.5rem;
+    margin-left: -2rem;
+    transition: .4s ease-in-out;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+.subnavContent a:hover {
+    color: var(--grisClaro);
+    background-color: var(--grisNegro);
+    cursor: pointer;
+    margin-left: 0;
+}
+.subnavShown {
+    display: flex;
+    flex-direction: column;
+}
+@keyframes mostrarSubnav {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        right: 0%;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        right: 2.5%;
+    }
+}
+/* FOOTER */
+footer {
+    color: var(--blanco);
+    background-color: var(--negro);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+}
+footer a {
+    color: var(--blanco);
+    border-bottom: .1rem solid rgba(255, 255, 255, 0);
+    transition: .4s ease-in-out;
+}
+footer a:hover {
+    color: var(--gris);
+    border-color: var(--gris);
+}
+footer p {
+    padding: 0;
+    margin: 0;
+}
+footer h4 {
+    font-weight: bold;
+    pointer-events: none;
+    line-height: 1;
+}
+footer h4 span {
+    color: var(--primario);
+}
+.footerTop,
+.footerTop .footerNav,
+.footerMiddle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.footerTop {
+    text-transform: uppercase;
+    padding: 3.2rem 0;
+    border-bottom: .1rem solid var(--grisNegro);
+}
+.footerTop .footerNav a {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+.footerMiddle {
+    gap: 1.2rem;
+    padding: 1.6rem 0;
+    border-bottom: .1rem solid var(--grisNegro);
+}
+.footerMiddle p {
+    line-height: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: var(--grisOscuro);
+}
+.footerBottom {
+    padding: .8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: var(--grisOscuro);
+}
+
+/* MAIN */
+/* HERO */
+.heroTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.heroTitle h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.2rem;
+}
+.heroTitle h4 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.heroTitle span {
+    color: var(--primario);
+}
+.heroImg {
+    border-radius: 2rem;
+    background-color: var(--primario);
+    padding-bottom: 10rem;
+    margin-bottom: 8rem;
+    position: relative;
+}
+.heroImg .circle {
+    display: none;
+}
+.heroImg img {
+    position: absolute;
+    top: calc(100% - 11rem);
+    left: 50%;
+    width: auto;
+    height: 15rem;
+    transform: translate(-50%, 0%);
+    border-radius: 2rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.3);
+}
+.heroImg .heroContent {
+    padding: 2rem;
+    color: var(--blanco);
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.heroImg .heroContent h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+.heroImg .heroContent span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+/* FONDOS */
+.fondoBlanco,
+.fondoGris {
+    position: relative;
+    z-index: 0;
+}
+.fondoGris {
+    background-color: var(--grisClaro);
+}
+.fondoBlanco h2,
+.fondoGris h2 {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 4rem;
+    line-height: 1;
+}
+/* HOME GRID PRODUCTOS */
+.gridProductos {
+    width: 100%;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: .12rem solid var(--grisNegro);
+}
+.productoHome {
+    border-bottom: .12rem solid var(--grisNegro);
+}
+.productoHome:nth-child(1),
+.productoHome:nth-child(4),
+.productoHome:nth-child(5) {
+    border-right: .12rem solid var(--grisNegro);
+}
+.productoHome:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.productoHome:nth-child(4) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.productoHome .productoHomeImg {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grisClaro);
+}
+.productoHome .productoHomeImg img {
+    width: 60%;
+}
+.productoHome .productoHomeInfo {
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    border-top: .12rem solid var(--grisNegro);
+}
+.productoHome .productoHomeInfo h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.productoHome .productoHomeInfo p {
+    margin-bottom: 0;
+}
+#cuadrado {
+    min-width: 1.5rem;
+    max-height: 1.5rem;
+    margin: .5rem .5rem .5rem 0;
+    background-color: var(--primario);
+}
+.productoHome span {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primario);
+}
+.productoHome span a {
+    padding: 0 1rem;
+    color: var(--blanco);
+    border-bottom: .4rem solid var(--grisNegro);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+.productoHome span p {
+    display: none;
+}
+/* HOME GRID EMPRESA */
+.gridEmpresa {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem 2rem;
+}
+.empresaTexto {
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+.empresaTexto .texto1 {
+    display: flex;
+    align-items: center;
+}
+.texto1 #cuadrado,
+.usoTitle #cuadrado {
+    height: 1.5rem;
+    margin-right: 1.2rem;
+}
+.empresaTexto h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-top: 1.6rem;
+}
+.empresaTexto p span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.empresaTexto a {
+    width: fit-content;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color: var(--blanco);
+    background-color: var(--primarioVivo);
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: .4s ease-in-out;
+}
+.empresaTexto a:hover {
+    background-color: var(--primario);
+    box-shadow: 0 0 .5rem rgba(250, 250, 250, 30%);
+}
+.empresaItem {
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, 50%);
+    transition: .4s ease-in-out;
+    position: relative;
+}
+.empresaItem img {
+    display: block;
+    transition: .4s ease-in-out;
+}
+.empresaItem h3 {
+    padding: 2rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--grisNegro);
+    background-color: var(--gris);
+    transition: .4s ease-in-out;
+}
+.empresaItem p {
+    position: absolute;
+    width: 90%;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    text-align: justify;
+    color: var(--grisClaro);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+/* PERSPECTIVA */
+.perspectiva {
+    padding: 2rem 0 4rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.perspBtns {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.perspBtns button {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primarioVivo);
+    border-bottom: .15rem solid var(--gris);
+    text-transform: uppercase;
+}
+.perspBtns .btnClicked {
+    font-size: 2.6rem;
+    color: var(--primario);
+    border-bottom: .15rem solid var(--primario);
+}
+.perspInfo {
+    text-align: justify;
+}
+.perspInfo p {
+    padding-top: 1.4rem;
+}
+.perspInfo span {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.perspectiva img {
+    width: 60vw;
+    height: 60vw;
+}
+.perspectiva .planeta {
+    margin: auto;
+}
+/* DATOS CARBOEXCO */
+.bateriasBg {
+    background-image: url('../imgs/baterias.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.datosExco {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.datosExco h2,
+.datosExco h4  {
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 3rem;
+    color: #8C0101;
+    background-color: var(--blanco);
+}
+.datosExco h2 {
+    margin: 0 0 3rem 0;
+}
+.datosExco h4 {
+    display: none;
+    margin: 3rem 0 0 0;
+}
+.datosExco .panel {
+    width: 100%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+}
+.datosExco .panel h3 {
+    color: #FF1F1F;
+    text-shadow: 0 0 1rem var(--negro);
+    font-weight: 700;
+    font-size: 4.2rem;
+    line-height: 1;
+}
+.datosExco .panel p {
+    width: 100%;
+    text-align: right;
+    padding: 0 1.6rem;
+    margin: .8rem 0;
+    font-weight: bold;
+    border-radius: 3rem;
+    color: var(--blanco);
+    text-shadow: 0 0 1rem var(--negro);
+}
+.datosExco .panel:hover p {
+    left: 50%;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: 0 0 1rem rgba(250, 250, 250, .5);
+}
+/* PROYECTOS MINEROS */
+.pMinasBg {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.pMinas {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: var(--gris2);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .3);
+    border-radius: 2rem;
+}
+.pMinas .pMinasImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.pMinas .pMinasImg img {
+    width: 55%;
+}
+.pMinas .pMinasImg h3 {
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 1;
+    padding-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'mighaExp', serif;
+}
+.pMinas .pMinasImg:nth-child(2) {
+    border-radius: 2rem;
+    background-color: var(--grisClaro);
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .3);
+}
+.pMinas .pMinasImg:nth-child(2) h3 {
+    color: var(--primarioVivo);
+}
+.pLocacion {
+    background-color: var(--blanco);
+    margin: 4rem 0 2rem 0;
+}
+.pLocacion h3 {
+    color: var(--primario);
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+.pLocacion ol {
+    list-style-type: upper-alpha;
+    list-style-position: inside;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: .5rem 0;
+    padding: 0;
+    margin: 0;
+}
+.pLocacion li {
+    font-size: 1.4rem;
+    padding-left: 2rem;
+    color: var(--grisNegro);
+    text-transform: uppercase;
+}
+.pLocacion li::marker {
+    font-weight: bold;
+}
+/* PRODUCTOS COQUE */
+.coqueBlanco,
+.coqueGris {
+    padding: 4rem 0;
+    position: relative;
+}
+.coqueBlanco span,
+.coqueGris span {
+    display: none;
+}
+.coqueInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.coqueInfo h3 {
+    font-weight: 700;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.coqueInfo .coqueUses {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.coqueInfo .coqueUses .uso {
+    display: block;
+    margin: auto 0;
+}
+.coqueInfo .uso .usoTitle {
+    display: flex;
+    align-items: center;
+}
+.coqueInfo .coqueUses h4 {
+    color: var(--grisNegro);
+    font-size: 2rem;
+    font-family: 'mighaExp';
+    text-transform: uppercase;
+}
+.coqueInfo .coqueUses p {
+    text-align: justify;
+}
+.coqueInfo img {
+    display: block;
+    margin: auto;
+    width: 25rem;
+}
+.coqueTable {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+.coqueTable tbody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.coqueTable tr {
+    display: flex;
+    flex-direction: column;
+    border-bottom: .1rem solid var(--grisOscuro);
+}
+.coqueTable tr:nth-child(even) {
+    text-align: right;
+}
+.coqueTable th, .coqueTable td {
+    padding: 1rem 0;
+    border-bottom: .1rem solid var(--grisOscuro);
+}
+.coqueTable th:last-of-type, .coqueTable td:last-of-type {
+    border: none;
+}
+.coqueTable th {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    color: var(--grisOscuro);
+}
+.coqueTable td {
+    color: var(--negro);
+    font-size: 1.4rem;
+    vertical-align: text-top;
+}
+/* SOSTENIBLE */
+.ecoIntro {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.ecoIntro .ecoBg {
+    height: 35vh;
+    border-radius: 2rem;
+    background-image: url('../imgs/eco/ecoBg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 62%;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 30%);
+    position: relative;
+}
+.ecoIntro p {
+    padding: 2rem;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: justify;
+}
+.ecoIntro .ecoBg p {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: var(--blanco);
+    text-shadow: 0 0 1rem var(--negro);
+}
+.ecoIntro .ecoNoBg p {
+    padding-bottom: 0;
+}
+.ecoIntro .ecoBg a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: justify;
+    background-color: var(--primarioVivo);
+    color: var(--blanco);
+    padding: 1rem 2rem;
+    margin: 2rem 4rem;
+    border-radius: 1rem;
+    transition: .4s ease-in-out;
+}
+.ecoIntro .ecoBg a:hover {
+    background-color: var(--primario);
+    transform: translateX(1rem);
+    box-shadow: 0 0 .5rem rgba(250, 250, 250, 30%);
+}
+/* CONTACTO */
+.contacto {
+    display: flex;
+    flex-direction: column;
+}
+.contacto .mapa {
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 4rem;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.3);
+}
+
+.contactoForm h1 {
+    font-size: 3.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+.contactoForm h4 {
+    color: var(--grisOscuro2);
+    padding: 1rem 0 2rem 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.contactoForm form {
+    padding-bottom: 4rem;
+}
+.contactoForm .datoRow {
+    display: flex;
+    flex-direction: column;
+}
+.contactoForm .datoColumn {
+    display: flex;
+    flex-direction: column;
+}
+.contactoForm .datoColumn label {
+    font-weight: bold;
+    color: var(--grisOscuro2);
+}
+.contactoForm .datoColumn input,
+.contactoForm .datoColumn textarea {
+    border-radius: 1rem;
+    border: .1rem solid var(--gris);
+    padding: 1.2rem;
+    margin: .5rem 0 1rem 0;
+}
+.contactoForm .datoColumn textarea {
+    display: block;
+    width: 100%;
+    height: 8rem;
+}
+::placeholder {
+    color: var(--gris2);
+    opacity: 1;
+}
+.contactoForm .contactoSubmit {
+    width: 100%;
+    color: var(--blanco);
+    background-color: #0A69F8;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, .3);
+    transition: .4s ease-in-out;
+}
+.contactoForm .contactoSubmit:hover {
+    cursor: pointer;
+    background-color: #0925D9;
+    transform: translateX(1rem);
+}
+.contactoForm .errorMsj {
+    width: 100%;
+    line-height: 1;
+    color: var(--blanco);
+    background-color: var(--primario);
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .3);
+}
+.visita {
+    width: 85%;
+    padding: 4rem 0;
+    margin: auto;
+}
+.visita h3 {
+    font-size: 1.6rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+/* ERROR PAGE */
+.errorPage {
+    min-height: calc(100vh - 25.4rem);
+    padding: 4rem 0;
+}
+.errorR {
+    display: none;
+}
+.errorL {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+}
+.errorL h1,
+.errorL h2 {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.errorL p {
+    color: var(--grisOscuro2);
+}
+.errorL a {
+    width: fit-content;
+    background-color: var(--primarioVivo);
+    color: var(--blanco);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    transition: .4s ease-in-out;
+}
+.errorL a:hover {
+    background-color: var(--primario);
+    transform: translateX(1rem);
+    box-shadow: 0 0 .5rem rgba(250, 250, 250, 30%);
+}
+/* MARQUESINA */
+.mScroll {
+    width: 100%;
+    height: 8rem;
+    margin-top: 4rem;
+    background-color: var(--negro);
+    overflow: hidden;
+    z-index: 1;
+}
+.mScroll .mScrollTitle {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: all 1s ease;
+}
+.mScroll .mScrollTitle > div {
+    display: flex;
+    animation: scrollText 33s infinite linear;
+}
+.mScroll .mScrollTitle > div:hover {
+    animation-play-state: paused;
+}
+.mScroll .mScrollTitle h1 {
+    color: var(--blanco);
+    text-transform: uppercase;
+    transition: all 2s ease;
+}
+@keyframes scrollText {
+    from   { transform: translateX(0%); }
+    to { transform: translateX(-50%); }
+}
+/* .mScroll .mScrollTitle a {
+    text-decoration: none;
+    color:white;
+}
+.mScroll .mScrollTitle a:hover{
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+} */
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+    /* LAYOUT */
+    .menu {
+        width: 50%;
+    }
+    @keyframes mostrarMenu {
+        0% {
+            opacity: 0;
+            width: 0%;
+        } 100% {
+            opacity: 1;
+            width: 50%;
+        }
+    }
+    .subMenu {
+        width: 50%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: mostrarSubMenu .4s ease-in-out;
+    }
+    @keyframes mostrarSubMenu {
+        0% {
+            opacity: 0;
+            width: 0%;
+        }
+        100% {
+            opacity: 1;
+            width: 50%;
+        }
+    }
+    .footerTop,
+    .footerTop .footerNav {
+        flex-direction: row;
+        gap: none;
+    }
+    .footerTop .footerNav a {
+        font-size: 1.4rem;
+    }
+    /* HERO */
+    .heroTitle h1 {
+        font-size: 6.6rem;
+        letter-spacing: -0.3rem;
+    }
+    .heroTitle h4 {
+        font-size: 4.8rem;
+        margin-bottom: 2rem;
+    }
+    .heroImg {
+        padding-bottom: 13rem;
+    }
+    .heroImg img {
+        top: calc(100% - 14rem);
+        height: 18rem;
+    }
+    .heroImg .heroContent {
+        padding: 2rem 4rem;
+    }
+    /* FONDOS */
+    .fondoBlanco h2,
+    .fondoGris h2 {
+        font-size: 5rem;
+        padding-top: 8rem;
+    }
+    /* HOME GRID PRODUCTOS */
+    .gridProductos {
+        grid-template-columns: repeat(3, 1fr);
+        border-top: .12rem solid var(--grisNegro);
+    }
+    .productoHome:nth-child(1),
+    .productoHome:nth-child(2) {
+        border-right: .12rem solid var(--grisNegro);
+    }
+    .productoHome:nth-child(3),
+    .productoHome:nth-child(4) {
+        border-right: none;
+        grid-column-start: auto;
+        grid-column-end: auto;
+        grid-row-start: auto;
+        grid-row-end: auto;
+    }
+    .productoHome:nth-child(4),
+    .productoHome:nth-child(5) {
+        border-right: .12rem solid var(--grisNegro);
+    }
+    .productoHome .productoHomeImg {
+        height: 22rem;
+        background-color: var(--grisClaro);
+    }
+    .productoHome .productoHomeInfo h3 {
+        font-size: 2.5rem;
+    }
+    #cuadrado {
+        min-width: 1.5rem;
+        max-height: 1.5rem;
+        margin: 1rem 1rem 1rem 0;
+    }
+    .productoHome span {
+        height: 100%;
+    }
+    .productoHome span a {
+        font-size: 3rem;
+        border-bottom: .5rem solid var(--grisNegro);
+    }
+    /* HOME GRID EMPRESA */
+    .gridEmpresa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .empresaTexto {
+        padding-bottom: 3rem;
+        justify-content: space-evenly;
+    }
+    .empresaTexto a {
+        margin: 0;
+    }
+    /* PERSPECTIVA */
+    .perspectiva img {
+        width: 40vw;
+        height: 40vw;
+    }
+    /* DATOS CARBOEXCO */
+    .datosExco h4 {
+        display: inherit;
+    }
+    .datosExco .panel {
+        height: 8rem;
+        position: relative;
+    }
+    .datosExco .panel h3 {
+        color: #8C0101;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -50%);
+        font-size: 8rem;
+    }
+    .datosExco .panel p {
+        width: max-content;
+        padding: 0 2rem;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--negro);
+        background-color: var(--blanco);
+        text-shadow: none;
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+    }
+    /* PROYECTOS MINEROS */
+    .pMinas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .pMinas .pMinasImg img {
+        width: 55%;
+        transition: .4s ease-in-out;
+    }
+    .pMinas .pMinasImg h3 {
+        font-size: 3rem;
+    }
+    .pMinas .pMinasImg:nth-child(2):hover img {
+        transform: scale(1.1);
+    }
+    .pLocacion h3 {
+        font-size: 2.5rem;
+    }
+    .pLocacion ol {
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    }
+    .pLocacion li {
+        font-size: 1.6rem;
+    }
+    /* PRODUCTOS COQUE */
+    .coqueBlanco span,
+    .coqueGris span {
+        display: inherit;
+        position: absolute;
+        top: 48%;
+        right: 0;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+        font-family: 'mighaBold';
+        font-size: 25rem;
+        line-height: 1.1;
+        background: linear-gradient(180deg, var(--gris) 0%, var(--blanco) 100%);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        z-index: -1;
+    }
+    .coqueGris span {
+        background: linear-gradient(180deg, var(--blanco) 0%, var(--grisClaro) 100%);
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+    .coqueInfo {
+        gap: none;
+    }
+    .coqueInfo h3 {
+        font-size: 3rem;
+        text-align: left;
+    }
+    .coqueInfo .coqueUses {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+    }
+    .coqueInfo .coqueUses h4 {
+        font-size: 2.2rem;
+    }
+    .coqueInfo img {
+        width: 28rem;
+    }
+    .coqueTable {
+        width: 100%;
+        table-layout: auto;
+    }
+    .coqueTable tbody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .coqueTable tr {
+        flex-direction: row;
+        border: none;
+    }
+    .coqueTable tr:nth-child(even) {
+        text-align: left;
+    }
+    .coqueTable tr:nth-child(2) {
+        padding-bottom: 2rem;
+    }
+    .coqueTable th, .coqueTable td {
+        padding: 0;
+        width: 20%;
+        border: none;
+    }
+    .coqueTable th {
+        font-weight: 400;
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+    }
+    /* SOSTENIBLE */
+    .ecoIntro .ecoBg {
+        height: 35vh;
+        border-radius: 2rem;
+        background-image: url('../imgs/eco/ecoBg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 62%;
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, 30%);
+        position: relative;
+    }
+    .ecoIntro p {
+        font-size: 1.8rem;
+    }
+    /* CONTACTO */
+    .contactoForm h1 {
+        font-size: 5rem;
+    }
+    .contactoForm h4 {
+        font-size: 2rem;
+    }
+    .contactoForm .datoRow {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    .visita h3 {
+        font-size: 2.2rem;
+    }
+}
+@media (min-width: 1200px) {
+    /* LAYOUT */
+    .menu {
+        width: 30%;
+    }
+    @keyframes mostrarMenu {
+        0% {
+            opacity: 0;
+            width: 0%;
+        } 100% {
+            opacity: 1;
+            width: 30%;
+        }
+    }
+    .subMenu {
+        width: 70%;
+    }
+    @keyframes mostrarSubMenu {
+        0% {
+            opacity: 0;
+            width: 0%;
+        }
+        100% {
+            opacity: 1;
+            width: 70%;
+        }
+    }
+    .footerMiddle {
+        flex-direction: row;
+        gap: none;
+    }
+    .footerTop .footerNav {
+        gap: 4rem;
+    }
+    .footerTop .footerNav a {
+        font-size: 1.6rem;
+    }
+    /* HERO */
+    .hero {
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+    }
+    .heroTitle {
+        justify-content: end;
+        align-items: flex-start;
+    }
+    .heroTitle h4 {
+        margin-bottom: 12vh;
+    }
+    .heroImg {
+        background-color: unset;
+        padding: 0;
+        margin: 0;
+    }
+    .heroImg .circle {
+        display: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        overflow: hidden;
+    }
+    .heroImg .circle::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primarioVivo);
+        clip-path: circle(30vh at center);
+        transition: .5s ease-in-out;
+    }
+    .heroImg .circle:hover::before {
+        background-color: var(--primario);
+        clip-path: circle(60rem at center);
+    }
+    .heroImg img {
+        top: 50%;
+        left: 50%;
+        height: 45vh;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: .5s ease-in-out;
+    }
+    .heroImg:hover img {
+        left: 82%;
+        height: 35vh;
+    }
+    .heroImg .heroContent {
+        position: relative;
+        left: 10%;
+        width: 55%;
+        height: 100%;
+        padding: 0 2rem 0 4rem;
+        transition: .5s ease-in-out;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .heroImg:hover .heroContent {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* HOME GRID PRODUCTOS */
+    .productoHome .productoHomeImg {
+        height: 26rem;
+    }
+    .productoHome .productoHomeImg img {
+        width: 50%;
+    }
+    #cuadrado {
+        min-width: 2rem;
+        max-height: 2rem;
+    }
+    .productoHome .productoHomeInfo p {
+        margin-bottom: 1rem ;
+    }
+    .productoHome span {
+        height: 100%;
+        font-size: 4rem;
+        color: var(--blanco);
+        clip-path: circle(8% at 50% 50%);
+        transition: .4s ease-in-out;
+        position: relative;
+    }
+    .productoHome span:hover {
+        clip-path: circle(150% at 50% 50%);
+        background-color: var(--primario);
+    }
+    .productoHome span a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        visibility: hidden;
+        opacity: 0;
+        transition: .4s ease-in-out;
+    }
+    .productoHome span:hover a {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        border-bottom: .5rem solid var(--blanco);
+    }
+    .productoHome span a:hover {
+        border-bottom: .5rem solid var(--grisNegro);
+    }
+    .productoHome span p {
+        display: inherit;
+        transition: .4s ease-in-out;
+        opacity: 1;
+    }
+    .productoHome span:hover p {
+        visibility: hidden;
+        opacity: 0;
+        margin-top: -4rem;
+    }
+    /* HOME GRID EMPRESA */
+    .gridEmpresa {
+        padding: 4rem 0 6rem 0;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .empresaTexto {
+        padding: 3rem 0;
+        justify-content: space-between;
+    }
+    .empresaTexto .texto1 {
+        height: 5rem;
+    }
+    .texto1 #cuadrado,
+    .usoTitle #cuadrado {
+        height: 2rem;
+    }
+    .empresaTexto h3 {
+        font-size: 4rem;
+        margin: 0;
+    }
+    .empresaTexto a:hover {
+        transform: translateX(1rem);
+    }
+    .empresaItem:hover {
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, 50%);
+    }
+    .empresaItem:hover img {
+        filter: brightness(.4);
+    }
+    .empresaItem h3 {
+        padding: 3rem 0;
+    }
+    .empresaItem:hover h3 {
+        color: var(--grisClaro);
+        background-color: var(--negro);
+    }
+    .empresaItem p {
+        width: auto;
+        top: 30%;
+        left: 0;
+        transform: translate(0, 0);
+        padding: 0 3rem;
+        background-color: unset;
+        visibility: hidden;
+        opacity: 0;
+        transition: .4s ease-in-out;
+    }
+    .empresaItem:hover p {
+        visibility: visible;
+        opacity: 1;
+        top: 20%;
+        transform: translateY(-20%);
+    }
+    /* PERSPECTIVA */
+    .perspectiva {
+        min-height: 70vh;
+        padding: 4rem 0;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        position: relative;
+    }
+    .perspBtns {
+        padding: 0;
+        flex-direction: column;
+    }
+    .perspBtns button {
+        font-size: 2.4rem;
+        transition: .4s ease-in-out;
+    }
+    .perspBtns button:hover {
+        color: var(--primario);
+        border-bottom: .15rem solid var(--primario);
+        cursor: pointer;
+    }
+    .perspBtns .btnClicked {
+        font-size: 3rem;
+    }
+    .perspInfo {
+        margin: auto;
+        padding-left: 30vh;
+    }
+    .perspectiva img {
+        width: 45vh;
+        height: 45vh;
+    }
+    .perspectiva .planeta {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translate(-40%, -50%);
+    }
+    /* DATOS CARBOEXCO */
+    .datosExco h2,
+    .datosExco h4  {
+        font-size: 3rem;
+    }
+    .datosExco .panel {
+        height: 8rem;
+    }
+    .datosExco .panel h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FF1F1F;
+        font-size: 8rem;
+        transition: .5s ease-in-out;
+    }
+    .datosExco .panel:hover h3 {
+        left: 0;
+        transform: translate(0%, -50%);
+        color: #8C0101;
+    }
+    .datosExco .panel p {
+        top: 50%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        font-size: 2.2rem;
+        opacity: 0;
+        visibility: hidden;
+        background-color: var(--gris2);
+        transition: .5s ease-in-out;
+    }
+    .datosExco .panel:hover p {
+        left: 50%;
+        opacity: 1;
+        visibility: visible;
+        background-color: var(--blanco);
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+    }
+    .datosExco .panel:hover {
+        cursor: default;
+    }
+    /* PROYECTOS MINEROS */
+    .pMinas .pMinasImg h3 {
+        font-size: 3.6rem;
+    }
+    /* PRODUCTOS COQUE */
+    .coqueBlanco span,
+    .coqueGris span {
+        top: 50%;
+        transform: translateY(-50%) scaleY(1.1);
+        font-size: 28rem;
+    }
+    .coqueInfo img {
+        width: 30rem;
+    }
+    /* SOSTENIBLE */
+    .ecoIntro .ecoBg p {
+        width: 90%;
+    }
+    .ecoIntro .ecoNoBg p {
+        padding: 2rem 2rem 0 10%;
+    }
+    /* CONTACTO */
+    .contacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .contacto .mapa {
+        width: 100%;
+        height: calc(100% - 4rem);
+        margin-left: 2rem;
+    }
+    .contactoForm {
+        margin-right: 2rem;
+    }
+    .contactoForm h1 {
+        font-size: 5rem;
+        text-align: left;
+    }
+    .contactoForm h4 {
+        font-size: 2rem;
+        text-align: left;
+    }
+    .contactoForm .contactoSubmit {
+        width: 50%;
+    }
+    .visita h3 {
+        font-size: 2.5rem;
+    }
+    /* ERROR PAGE */
+    .errorPage {
+        min-height: calc(100vh - 25.4rem);
+        padding: 4rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .errorL {
+        gap: none;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .errorR {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .errorR img {
+        height: 50vh;
+        border-radius: 2rem;
+        box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.3);
+    }
+}
+@media (min-width: 1400px) {
+    /* LAYOUT */
+    .menu {
+        width: 25%;
+    }
+    @keyframes mostrarMenu {
+        0% {
+            opacity: 0;
+            width: 0%;
+        } 100% {
+            opacity: 1;
+            width: 25%;
+        }
+    }
+    .subMenu {
+        width: 75%;
+    }
+    @keyframes mostrarSubMenu {
+        0% {
+            opacity: 0;
+            width: 0%;
+        }
+        100% {
+            opacity: 1;
+            width: 75%;
+        }
+    }
+    /* HOME GRID PRODUCTOS */
+    .gridProductos {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .productoHome .productoHomeImg {
+        height: 30rem;
+    }
+    .productoHome:nth-child(3),
+    .productoHome:nth-child(5) {
+        display: none;
+    }
+    .productoHome:nth-child(4) {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        border-right: none;
+    }
+    .productoHome:nth-child(6) {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        border-right: .12rem solid var(--grisNegro);
+    }
+    /* PRODUCTOS COQUE */
+    .coqueBlanco span,
+    .coqueGris span {
+        top: 45%;
+        font-size: 33rem;
+    }
+    .coqueInfo img {
+        width: 35rem;
+    }
+}
+@media (max-width: 370px) {
+    .productoHome .productoHomeImg {
+        height: 18rem;
+    }
+    .productoHome .productoHomeImg img {
+        width: 50%;
+    }
+    .productoHome .productoHomeInfo h3,
+    .productoHome .productoHomeInfo p {
+        font-size: 1.2rem;
+    }
+    #cuadrado {
+        min-width: 1rem;
+        height: 1rem;
+    }
+    .ecoIntro p {
+        font-size: 1.2rem;
+    }
+}

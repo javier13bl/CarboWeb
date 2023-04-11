@@ -9,15 +9,15 @@ const Productos = () => {
         <main className='gris'>
             <section className='hero wrapperContent'>
                 <div className='heroTitle'>
-                    <h1>Carbo<span>ex</span>co</h1>
+                    <h1>Carbo<span>web</span></h1>
                     <h4><span>Productos</span></h4>
                 </div>
                 <div className='heroImg'>
                     <div className='circle'></div>
                     <div className='heroContent'>
                         <h2>Calidad</h2>
-                        <p>Nuestra empresa amplió su mercado y diversificó su actividad económica hacia la producción de coques de alta calidad.</p>
-                        <p>Para asegurarnos de esto, contamos con personal especializado que revisa rigurosamente cada detalle que demandan las normas de calidad y el mercado actual.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu ullamcorper diam.</p>
+                        <p>Lorem ipsum dolor sit amet, <span>consectetur adipiscing elit.</span> Aenean eu ullamcorper diam. Nullam tempor, ante et rhoncus lacinia, turpis urna semper mauris, vel eleifend ante neque eu massa.</p>
                     </div>
                     <img src={coalmine}/>
                 </div>

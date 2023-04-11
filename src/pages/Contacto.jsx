@@ -48,14 +48,14 @@ const Contacto = () => {
                             />
                         </Form>
                     </div>
-                    <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15808.303058219988!2d-72.51092313406157!3d7.887142307998901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e664582efb4f81d%3A0x64c4e4f975b0d800!2sCarboexco%20C.I.%20Ltada.!5e0!3m2!1ses-419!2sco!4v1665617869906!5m2!1ses-419!2sco" allowFullScreen="" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe className='mapa' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.6601811075957!2d-115.01789122559568!3d36.077391808112594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d0b89793735f%3A0x82738f1bb7cadcb8!2s712%20Red%20Bark%20Ln%2C%20Henderson%2C%20NV%2089011%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sco!4v1681253874008!5m2!1ses-419!2sco" allowFullScreen="" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
             <section className='fondoGris'>
                 <h2>Visita nuestras instalaciones</h2>
                 <div className='visita'>
-                    <h3>Calle 10 #3-42, Banco Santander, Oficina 703</h3>
-                    <h3>Cúcuta, Norte de Santander, Colombia - América del Sur</h3>
+                    <h3>Avenida Siempre Viva 742</h3>
+                    <h3>Colombia Tierra Querida</h3>
                     <h3>Horario: Lun-Vie 08:00 - 18:00 / Sáb 08:00 - 12:00</h3>
                 </div>
             </section>

@@ -13,15 +13,15 @@ const Home = () => {
         <main>
             <section className='hero wrapperContent'>
                 <div className='heroTitle'>
-                    <h1>carbo<span>ex</span>co</h1>
-                    <h4>desde <span>1982</span></h4>
+                    <h1>carbo<span>web</span></h1>
+                    <h4>desde <span>1919</span></h4>
                 </div>
                 <div className='heroImg'>
                     <div className='circle'></div>
                     <div className='heroContent'>
                         <h2>Bienvenidos</h2>
-                        <p>CARBOEXCO C.I. LTDA. es una empresa industrial ubicada en Norte de Santander, <span>Colombia.</span></p>
-                        <p>Fundada por el economista <span>Dr. Jesús Andelfo Villamizar Peñaranda</span>, cuenta con más de 40 años de experiencia en la producción de <span>coque metalúrgico reactivo.</span></p>
+                        <p>CARBOWEB LTDA. es una empresa industrial ubicada en <span>Colombia.</span></p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu ullamcorper diam. Nullam tempor, ante et rhoncus lacinia, turpis urna semper mauris, vel eleifend ante neque eu massa.</p>
                     </div>
                     <img src={coque}/>
                 </div>
@@ -104,17 +104,17 @@ const Home = () => {
                     <div className='empresaItem'>
                         <img src={produ}/>
                         <h3>Producción</h3>
-                        <p>Compañía líder en la producción de Coque Reactivo de ultra bajo fósforo.<br/>Contamos con una capacidad mensual de 12.000 toneladas aproximadamente.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu ullamcorper diam. Nullam tempor, ante et rhoncus lacinia, turpis urna semper mauris.</p>
                     </div>
                     <div className='empresaItem'>
                         <img src={inter}/>
                         <h3>Internacional</h3>
-                        <p>Más de 40 años de experiencia en el mercado Nacional e Internacional.<br/>Fortaleciendo el sector del Coque de bajo fósforo de Colombia y Norte de Santander.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu ullamcorper diam. Nullam tempor, ante et rhoncus lacinia, turpis urna semper mauris.</p>
                     </div>
                     <div className='empresaItem'>
                         <img src={lab}/>
                         <h3>Calidad</h3>
-                        <p>Nuestros productos cumplen con las normas y reglamentos bajo la Certificación SGS.<br/> La calidad de nuestro Coque resalta a Nivel Mundial.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu ullamcorper diam. Nullam tempor, ante et rhoncus lacinia, turpis urna semper mauris.</p>
                     </div>
                 </div>
             </section>

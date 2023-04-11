@@ -42,15 +42,15 @@ const Nosotros = () => {
         <main className='cafe'>
             <section className='hero wrapperContent'>
                 <div className='heroTitle'>
-                    <h1>carbo<span>ex</span>co</h1>
+                    <h1>carbo<span>web</span></h1>
                     <h4><span>empresa</span></h4>
                 </div>
                 <div className='heroImg'>
                     <div className='circle'></div>
                     <div className='heroContent'>
                         <h2>Nosotros</h2>
-                        <p>CARBOEXCO C.I Ltda. define una <span>estructura organizacional</span> jerárquica, ambigua, pero altamente funcional.</p>
-                        <p>Su efectividad ha logrado mantener en el tiempo a la compañía, cuyo objetivo principal ha sido mantenerse <span>competitivamente</span> como uno de los principales <span>productores de coque.</span></p>
+                        <p>CARBOWEB Ltda. define una <span>consectetur adipiscing</span> elit. Aenean eu ullamcorper diam. Nullam tempor, ante et.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu ullamcorper diam. Nullam tempor, ante et rhoncus lacinia, turpis urna semper mauris.</p>
                     </div>
                     <img src={tunel}/>
                 </div>
@@ -69,11 +69,11 @@ const Nosotros = () => {
                     </div>
                     <div className='perspInfo'>
                         <div className={misionTextClass}>
-                            <p>Suministrar de manera confiable, a los mercados internacionales, <span>coque de excelente calidad</span> producido con mezclas de carbones cuidadosamente seleccionados.</p>
-                            <p>Garantizando un producto que satisfaga los requerimientos de la industria de ferroaleaciones, con un desarrollo ambiental, social y económico. Cumpliendo con las normas constitucionales e institucionales; <span>comprometidos con el desarrollo</span> de Norte de Santander y Colombia.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span>Aenean eu ullamcorper diam. Nullam tempor</span>, ante et rhoncus lacinia, turpis urna semper mauris, vel eleifend ante neque eu massa.</p>
+                            <p>Quisque eget vehicula sem. Praesent vulputate massa in metus vehicula lobortis. Aliquam nec placerat turpis. Donec congue rutrum dolor, vitae feugiat massa efficitur nec. Suspendisse molestie massa quis varius aliquet. Morbi accumsan dapibus lectus eu viverra. Sed et magna sed urna efficitur vulputate a id magna.</p>
                         </div>
                         <div className={visionTextClass}>
-                            <p>En el año 2030 estar posicionados como la empresa líder del sector, manteniendo la <span>dinámica de crecimiento y calidad</span> obtenida hasta ahora, para una proyección internacional como <span>proveedor seguro y competitivo.</span></p>
+                            <p>Quisque eget vehicula sem. Praesent vulputate massa in metus vehicula lobortis. Aliquam nec placerat turpis. Donec congue rutrum dolor, vitae feugiat massa efficitur nec. <span>Suspendisse molestie massa quis varius aliquet.</span> Morbi accumsan dapibus lectus eu viverra. Sed et magna sed urna efficitur vulputate a id magna.</p>
                         </div>
                     </div>
 
@@ -123,23 +123,24 @@ const Nosotros = () => {
                         </div>
                         <div className='pMinasImg'>
                             <img src={ns}/>
-                            <h3>Norte de Santander</h3>
+                            <h3>Departamento</h3>
                         </div>
                     </div>
                     <div className='pLocacion'>
                         <h3>Información</h3>
                         <ol>
-                            <li>Estrella 2</li>
                             <li>Estrella 1</li>
-                            <li>La Contenta</li>
-                            <li>Casa Zinc</li>
-                            <li>Rancho Grande</li>
-                            <li>San Jose I</li>
-                            <li>San Jose II</li>
-                            <li>Delicias</li>
-                            <li>Toledo</li>
-                            <li>Toledo I</li>
-                            <li>Toledo II</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
+                            <li>Estrella 1</li>
                         </ol>
                     </div>
                 </div>
